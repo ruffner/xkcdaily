@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bluntllama.xkcdaily"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.1" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -20,6 +20,9 @@
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.bluntllama.xkcdaily.ACTION_REFRESH" />
+            </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
@@ -29,9 +32,14 @@
             android:name="com.bluntllama.xkcdaily.NoConnectionActivity"
             android:label="@string/title_activity_no_connection" >
         </activity>
+        
         <activity
             android:name="com.bluntllama.xkcdaily.ShowFragmentActivity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.bluntllama.xkcdaily.LastUpdateFailedActivity"
+            android:label="@string/title_last_update_failed" >
         </activity>
     </application>
 

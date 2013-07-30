@@ -10,7 +10,7 @@ public class NoConnectionActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_no_connection);
+		setContentView(R.layout.activity_no_connection_no_image);
 	}
 	
 	public void closeWindow(View v) {
