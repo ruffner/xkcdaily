@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical" >
+
+    <com.bluntllama.xkcdaily.CustomViewPager
+        android:id="@+id/pager"
+        android:layout_width="wrap_content"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+    </com.bluntllama.xkcdaily.CustomViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/mouseover_button"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/share"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="shareLink"
+            android:text="@string/share" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="closeWindow"
+            android:text="@string/close" />
+
+    </LinearLayout>
+
+</LinearLayout>
