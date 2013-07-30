@@ -78,16 +78,18 @@ public class ShowFragmentActivity extends FragmentActivity {
         mPager.setScrollContainer(false);
         
         ViewGroup.LayoutParams lp = mPager.getLayoutParams();
-        Bitmap img = getSavedImage();
-        if(img.getHeight() > img.getWidth()) {
-        	lp.height = img.getHeight() + 60;
-        	lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        if(isSavedImageAvailable()) {
+            Bitmap img = getSavedImage();
+            if(img.getHeight() > img.getWidth()) {
+                lp.height = img.getHeight() + 60;
+                lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
+            }
+            else {
+                lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
+                lp.height = img.getHeight() + 200;
+            }
+            mPager.setLayoutParams(lp);
         }
-        else {
-        	lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
-        	lp.height = img.getHeight() + 200;
-        }
-		mPager.setLayoutParams(lp);
         
         mPager.setOnPageChangeListener(new OnPageChangeListener() {
 			@Override
@@ -142,11 +144,11 @@ public class ShowFragmentActivity extends FragmentActivity {
         public Fragment getItem(int position) {
         	switch(position) {
 	        	case 0:
-	        		return new ZoomImageFragment(a);
+	        		return new ZoomImageFragment();
 	        	case 1:
 	        		return new MouseoverFragment();
         	}
-            return new ZoomImageFragment(a);
+            return new ZoomImageFragment();
         }
 
         @Override

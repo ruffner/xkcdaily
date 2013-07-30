@@ -24,11 +24,6 @@ public class ZoomImageFragment extends Fragment {
 	ImageData imageDeets;
 	Bitmap image = null;
 	Context c;
-	Activity act;
-	
-	public ZoomImageFragment(Activity a) {
-		act = a;
-	}
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,7 +31,7 @@ public class ZoomImageFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.layout_zoom_image_fragment, container, false);
         
-        c = inflater.getContext();
+        c = getActivity();
         
         imageDeets = new ImageData();
 		
